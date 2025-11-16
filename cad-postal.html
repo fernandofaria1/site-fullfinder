@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Postal - FullFinder</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Estilo Global -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-dark fw-bold" href="index.html">
+      <i class="fa-solid fa-gas-pump text-danger me-2"></i>FullFinder
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto gap-2">
+
+        <li class="nav-item"><a class="nav-link" href="index.html">Abertura</a></li>
+        <li class="nav-item"><a class="nav-link" href="cad-pessoal.html">Cadastro Pessoal</a></li>
+        <li class="nav-item"><a class="nav-link" href="cad-estudantil.html">Cadastro Estudantil</a></li>
+        <li class="nav-item"><a class="nav-link active" href="cad-postal.html">Cadastro Postal</a></li>
+        <li class="nav-item"><a class="nav-link" href="tabela.html">Tabela Dinâmica</a></li>
+        <li class="nav-item"><a class="nav-link" href="graficos.html">Gráficos</a></li>
+        <li class="nav-item"><a class="nav-link" href="carrossel.html">Carrossel</a></li>
+        <li class="nav-item"><a class="nav-link" href="landpage.html">LandPage</a></li>
+        <li class="nav-item"><a class="nav-link" href="localizacao.html">Localização</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTEÚDO -->
+<section class="py-5">
+    <div class="container">
+
+        <h2 class="display-6 fw-bold text-danger text-center mb-4">
+            Cadastro Postal
+        </h2>
+
+        <p class="text-center text-dark mb-4">
+            Informe seu endereço completo para que o FullFinder personalize sua área,
+            recomende postos próximos e libere benefícios da sua região.
+        </p>
+
+        <!-- CARD DE FORMULÁRIO -->
+        <div class="card shadow-sm p-4 rounded mx-auto" style="max-width: 700px;">
+
+            <h5 class="fw-bold mb-3">
+                <i class="fa-solid fa-map-location-dot text-danger me-2"></i>
+                Endereço do Usuário
+            </h5>
+
+            <form>
+
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+                        <label class="form-label fw-semibold">CEP</label>
+                        <input type="text" class="form-control" placeholder="00000-000">
+                    </div>
+
+                    <div class="col-md-8">
+                        <label class="form-label fw-semibold">Rua / Avenida</label>
+                        <input type="text" class="form-control" placeholder="Digite sua rua">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Número</label>
+                        <input type="text" class="form-control" placeholder="Ex: 145">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Complemento</label>
+                        <input type="text" class="form-control" placeholder="Apartamento, bloco etc.">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Bairro</label>
+                        <input type="text" class="form-control" placeholder="Digite o bairro">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Cidade</label>
+                        <input type="text" class="form-control" placeholder="Ex: Franca">
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">Ponto de Referência</label>
+                        <input type="text" class="form-control" placeholder="Ex: Próximo ao supermercado X">
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-danger mt-4 w-100 fw-bold py-2">
+                    <i class="fa-solid fa-check me-2"></i>Salvar Endereço
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-4 bg-white shadow-sm mt-5">
+    <p class="mb-0 text-dark fw-semibold">
+        FullFinder © 2025 — Todos os direitos reservados
+    </p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Estudantil - FullFinder</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Estilo Global -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand text-dark fw-bold" href="index.html">
+            <i class="fa-solid fa-gas-pump text-danger me-2"></i>FullFinder
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto gap-2">
+                <li class="nav-item"><a class="nav-link" href="index.html">Abertura</a></li>
+                <li class="nav-item"><a class="nav-link" href="cad-pessoal.html">Cadastro Pessoal</a></li>
+                <li class="nav-item"><a class="nav-link active" href="cad-estudantil.html">Cadastro Estudantil</a></li>
+                <li class="nav-item"><a class="nav-link" href="cad-postal.html">Cadastro Postal</a></li>
+                <li class="nav-item"><a class="nav-link" href="tabela.html">Tabela Dinâmica</a></li>
+                <li class="nav-item"><a class="nav-link" href="carrossel.html">Carrossel</a></li>
+                <li class="nav-item"><a class="nav-link" href="graficos.html">Gráficos</a></li>
+                <li class="nav-item"><a class="nav-link" href="localizacao.html">Localização</a></li>
+                <li class="nav-item"><a class="nav-link" href="landpage.html">LandPage</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- CONTEÚDO -->
+<section class="container" style="margin-top: 7rem;">
+
+    <h2 class="fw-bold text-danger text-center mb-4">
+        <i class="fa-solid fa-graduation-cap me-2"></i>Cadastro Estudantil
+    </h2>
+
+    <div class="card shadow p-4">
+
+        <form>
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Nome Completo</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">RA / Matrícula</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Instituição de Ensino</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Curso</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Cidade</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Idade</label>
+                    <input type="number" class="form-control" min="10" required>
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label fw-semibold">Comprovante (opcional)</label>
+                    <input type="file" class="form-control">
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-danger px-4 fw-bold">
+                    <i class="fa-solid fa-check me-2"></i>Salvar Cadastro
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-4 bg-white shadow-sm mt-5">
+    <p class="mb-0 text-dark fw-semibold">FullFinder © 2025 — Todos os direitos reservados.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

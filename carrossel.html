@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel - FullFinder</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Estilo Global -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-dark fw-bold" href="index.html">
+        <i class="fa-solid fa-gas-pump text-danger me-2"></i>FullFinder
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto gap-2">
+
+          <li class="nav-item"><a class="nav-link" href="index.html">Abertura</a></li>
+          <li class="nav-item"><a class="nav-link" href="cad-pessoal.html">Cadastro Pessoal</a></li>
+          <li class="nav-item"><a class="nav-link" href="cad-estudantil.html">Cadastro Estudantil</a></li>
+          <li class="nav-item"><a class="nav-link" href="cad-postal.html">Cadastro Postal</a></li>
+          <li class="nav-item"><a class="nav-link" href="tabela.html">Tabela Dinâmica</a></li>
+          <li class="nav-item"><a class="nav-link" href="graficos.html">Gráficos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="carrossel.html">Carrossel</a></li>
+          <li class="nav-item"><a class="nav-link" href="landpage.html">LandPage</a></li>
+          <li class="nav-item"><a class="nav-link" href="localizacao.html">Localização</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO -->
+  <section class="py-5">
+    <div class="container">
+
+      <h2 class="display-6 fw-bold text-danger text-center mb-4">
+        Carrossel de Destaques
+      </h2>
+      <p class="text-center mb-5 text-dark">
+        Aqui você pode exibir campanhas, promoções, postos favoritos ou qualquer destaque visual do FullFinder.
+      </p>
+
+      <!-- CARROSSEL -->
+      <div id="carrosselFullFinder" class="carousel slide shadow rounded overflow-hidden">
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <a href="localizacao.html">
+              <img src="images/melhor_preço.jpg" class="d-block w-100" style="max-height:540px; object-fit:cover;">
+</a>
+          </div>
+
+          <div class="carousel-item">
+            <a href="localizacao.html">
+              <img src="images/eletricos.jpg" class="d-block w-100" style="max-height:540px; object-fit:cover;">
+            </a>
+          </div>
+
+
+          <div class="carousel-item">
+            <a href="localizacao.html">
+            <img src="images/conveniencia.jpg" class="d-block w-100" style="max-height:540px; object-fit:cover;">
+            </a>
+          </div>
+
+          <div class="carousel-item">
+            <a href="localizacao.html">
+            <img src="images/posto.jpg" class="d-block w-100" style="max-height:540px; object-fit:cover;">
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Botões -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosselFullFinder" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosselFullFinder" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-4 bg-white shadow-sm mt-5">
+    <p class="mb-0 text-dark fw-semibold">FullFinder © 2025 — Todos os direitos reservados</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

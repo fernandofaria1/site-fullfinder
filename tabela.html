@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Dinâmica - FullFinder</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Estilo global -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-dark fw-bold" href="index.html">
+      <i class="fa-solid fa-gas-pump text-danger me-2"></i>FullFinder
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto gap-2">
+
+        <li class="nav-item"><a class="nav-link" href="index.html">Abertura</a></li>
+        <li class="nav-item"><a class="nav-link" href="cad-pessoal.html">Cadastro Pessoal</a></li>
+        <li class="nav-item"><a class="nav-link" href="cad-estudantil.html">Cadastro Estudantil</a></li>
+        <li class="nav-item"><a class="nav-link" href="cad-postal.html">Cadastro Postal</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tabela.html">Tabela Dinâmica</a></li>
+        <li class="nav-item"><a class="nav-link" href="graficos.html">Gráficos</a></li>
+        <li class="nav-item"><a class="nav-link" href="carrossel.html">Carrossel</a></li>
+        <li class="nav-item"><a class="nav-link" href="landpage.html">LandPage</a></li>
+        <li class="nav-item"><a class="nav-link" href="localizacao.html">Localização</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTEÚDO -->
+<section class="py-5">
+    <div class="container">
+
+        <h2 class="display-6 fw-bold text-danger text-center mb-4">
+            Tabela Dinâmica
+        </h2>
+
+        <p class="text-center mb-4 text-dark">
+            Consulte registros cadastrados, visualize informações dos usuários
+            e acompanhe dados internos do FullFinder.
+        </p>
+
+        <!-- FILTRO -->
+        <div class="card shadow-sm p-4 rounded mb-4">
+            <h5 class="fw-bold mb-3"><i class="fa-solid fa-filter text-danger me-2"></i>Filtrar Registros</h5>
+
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <input type="text" id="filtroNome" class="form-control" placeholder="Buscar por nome">
+                </div>
+
+                <div class="col-md-4">
+                    <select id="filtroCidade" class="form-select">
+                        <option value="">Filtrar por cidade</option>
+                        <option>Franca</option>
+                        <option>Ribeirão Preto</option>
+                        <option>São Paulo</option>
+                        <option>Campinas</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <button class="btn btn-danger w-100" onclick="filtrar()">
+                        <i class="fa-solid fa-magnifying-glass me-2"></i>Buscar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TABELA -->
+        <div class="table-responsive shadow-sm rounded">
+            <table class="table table-hover text-center align-middle">
+                <thead class="table-danger">
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Cidade</th>
+                        <th>Avaliações</th>
+                        <th>Média Nota</th>
+                        <th>Última Atividade</th>
+                    </tr>
+                </thead>
+
+                <tbody id="dadosTabela">
+
+                    <tr>
+                        <td>Lucas Andrade</td>
+                        <td>Franca</td>
+                        <td>12</td>
+                        <td>4.8</td>
+                        <td>Hoje</td>
+                    </tr>
+
+                    <tr>
+                        <td>Carla Ribeiro</td>
+                        <td>São Paulo</td>
+                        <td>7</td>
+                        <td>4.5</td>
+                        <td>Ontem</td>
+                    </tr>
+
+                    <tr>
+                        <td>Marcos Silva</td>
+                        <td>Campinas</td>
+                        <td>19</td>
+                        <td>4.9</td>
+                        <td>Há 3 dias</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-4 bg-white shadow-sm mt-5">
+    <p class="mb-0 text-dark fw-semibold">
+        FullFinder © 2025 — Todos os direitos reservados
+    </p>
+</footer>
+
+<!-- JS do filtro (simples) -->
+<script>
+function filtrar() {
+    let nome = document.getElementById("filtroNome").value.toLowerCase();
+    let cidade = document.getElementById("filtroCidade").value;
+
+    let linhas = document.querySelectorAll("#dadosTabela tr");
+
+    linhas.forEach(linha => {
+        let nomeTd = linha.children[0].textContent.toLowerCase();
+        let cidadeTd = linha.children[1].textContent;
+
+        let cond1 = nome === "" || nomeTd.includes(nome);
+        let cond2 = cidade === "" || cidadeTd === cidade;
+
+        linha.style.display = (cond1 && cond2) ? "" : "none";
+    });
+}
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
