@@ -1,1 +1,344 @@
 teste
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FullFinder - Página Inicial</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Estilo Global -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #miniMap {
+            height: 260px;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.15);
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-dark fw-bold" href="#">
+      <i class="fa-solid fa-gas-pump text-danger me-2"></i>FullFinder
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto gap-2">
+
+        <li class="nav-item"><a class="nav-link active" href="index.html">Abertura</a></li>
+        <li class="nav-item"><a class="nav-link" href="cad-pessoal.html">Cadastro</a></li>
+        <li class="nav-item"><a class="nav-link" href="tabela.html">Tabela</a></li>
+        <li class="nav-item"><a class="nav-link" href="graficos.html">Gráficos</a></li>
+        <li class="nav-item"><a class="nav-link" href="localizacao.html">Mapa</a></li>
+        <li class="nav-item"><a class="nav-link" href="landpage.html">LandPage</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO COMPACTO -->
+<section class="py-5 mt-4">
+  <div class="container text-center">
+    <h2 class="fw-bold text-danger">Bem-vindo ao FullFinder</h2>
+    <p class="text-muted">
+      Seu assistente inteligente para achar o melhor posto, melhor café e melhores rotas.
+    </p>
+    <a href="localizacao.html" class="btn btn-danger fw-bold mt-2">
+      <i class="fa-solid fa-location-crosshairs me-2"></i>Ver Mapa
+    </a>
+  </div>
+</section>
+
+<!-- ACESSO RÁPIDO -->
+<section class="container mb-5">
+  <h4 class="fw-bold mb-3">Acesso Rápido</h4>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <a href="localizacao.html" class="text-decoration-none">
+        <div class="card shadow-sm p-4 text-center h-100">
+          <i class="fa-solid fa-map-location-dot text-danger fa-2x mb-3"></i>
+          <h5 class="fw-bold text-dark">Postos Próximos</h5>
+          <p class="text-muted">Encontre o posto ideal agora mesmo.</p>
+        </div>
+      </a>
+    </div>
+
+    
+
+    <div class="col-md-4">
+      <a href="tabela.html" class="text-decoration-none">
+        <div class="card shadow-sm p-4 text-center h-100">
+          <i class="fa-solid fa-table-list text-danger fa-2x mb-3"></i>
+          <h5 class="fw-bold text-dark">Tabela Dinâmica</h5>
+          <p class="text-muted">Lista de usuários, notas e movimentações.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4">
+      <a href="graficos.html" class="text-decoration-none">
+        <div class="card shadow-sm p-4 text-center h-100">
+          <i class="fa-solid fa-chart-line text-danger fa-2x mb-3"></i>
+          <h5 class="fw-bold text-dark">Gráficos</h5>
+          <p class="text-muted">Resumo visual de avaliações e engajamento.</p>
+        </div>
+      </a>
+    </div>
+    
+
+  </div>
+</section>
+
+
+<!-- MINI CARROSSEL --> 
+<section class="container mb-5">
+  <h4 class="fw-bold mb-3">Destaques</h4>
+
+  <div id="miniCarrossel" class="carousel slide shadow rounded overflow-hidden">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="images/melhor_preço.jpg"
+             class="d-block w-100" style="height:250px; object-fit:cover;">
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/eletricos.jpg"
+             class="d-block w-100" style="height:250px; object-fit:cover;">
+      </div>
+
+      <!-- SUA IMAGEM LOCAL -->
+      <div class="carousel-item">
+        <img src="images/conveniencia.jpg"
+             class="d-block w-100" style="height:250px; object-fit:cover;">
+      </div>
+
+         <!-- SUA IMAGEM LOCAL -->
+      <div class="carousel-item">
+        <img src="images/posto.jpg"
+             class="d-block w-100" style="height:250px; object-fit:cover;">
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#miniCarrossel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#miniCarrossel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</section>
+
+<!-- MC -->
+
+<!-- MINI GRÁFICO -->
+<section class="container mb-5">
+  <h4 class="fw-bold mb-3">Resumo do Engajamento</h4>
+
+  <div class="card shadow-sm p-4">
+    <canvas id="miniGrafico" height="100"></canvas>
+  </div>
+</section>
+<!-- MG -->
+
+
+<!-- MINI MAPA -->
+<section class="container mb-5">
+  <h4 class="fw-bold mb-3">Sua Localização</h4>
+
+  <div id="miniMap"></div>
+</section>
+<!-- MM -->
+
+
+<!-- CADASTRO PESSOAL -->
+<section class="container mb-5">
+  <h4 class="fw-bold mb-3">Cadastro Pessoal</h4>
+
+  <div class="card shadow-sm p-4">
+
+    <div class="row align-items-center">
+      
+      <!-- Ícone à esquerda -->
+      <div class="col-md-2 text-center mb-3 mb-md-0">
+        <i class="fa-solid fa-id-card text-danger" style="font-size: 48px;"></i>
+      </div>
+
+      <!-- Conteúdo à direita -->
+      <div class="col-md-10">
+        <h5 class="fw-bold text-dark">Gerencie informações básicas dos usuários</h5>
+
+        <p class="text-muted mb-3" style="max-width: 700px;">
+          Nesta área você pode cadastrar, visualizar e editar dados pessoais como 
+          <strong>nome</strong>, <strong>idade</strong>, <strong>telefone</strong>, 
+          <strong>email</strong>, além de informações adicionais relacionadas ao usuário.
+        </p>
+
+        <a href="cad-pessoal.html" class="btn btn-danger fw-bold px-4 py-2">
+          Acessar Cadastro Pessoal
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- CP -->
+
+<!-- CADASTRO ESTUDANTIL -->
+<section class="container mb-5">
+  <h4 class="fw-bold mb-3">Cadastro Estudantil</h4>
+
+  <div class="card shadow-sm p-4">
+
+    <div class="row align-items-center">
+
+      <div class="col-md-2 text-center mb-3 mb-md-0">
+        <i class="fa-solid fa-graduation-cap text-danger" style="font-size: 48px;"></i>
+      </div>
+
+      <div class="col-md-10">
+        <h5 class="fw-bold text-dark">Gerencie dados acadêmicos dos estudantes</h5>
+
+        <p class="text-muted mb-3" style="max-width: 700px;">
+          Cadastre e acompanhe informações como <strong>RA</strong>, <strong>turmas</strong>,
+          <strong>cursos</strong>, <strong>módulos</strong> e demais dados estudantis.
+        </p>
+
+        <a href="cad-estudantil.html" class="btn btn-danger fw-bold px-4 py-2">
+          Acessar Cadastro Estudantil
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- CE -->
+
+<!-- CADASTRO POSTAL -->
+<section class="container mb-5">
+  <h4 class="fw-bold mb-3">Cadastro Postal</h4>
+
+  <div class="card shadow-sm p-4">
+
+    <div class="row align-items-center">
+
+      <div class="col-md-2 text-center mb-3 mb-md-0">
+        <i class="fa-solid fa-map-pin text-danger" style="font-size: 48px;"></i>
+      </div>
+
+      <div class="col-md-10">
+        <h5 class="fw-bold text-dark">Gerencie endereços e informações geográficas</h5>
+
+        <p class="text-muted mb-3" style="max-width: 700px;">
+          Armazene dados como <strong>CEP</strong>, <strong>rua</strong>, <strong>bairro</strong>,
+          <strong>cidade</strong>, <strong>estado</strong> e complementos diversos.
+        </p>
+
+        <a href="cad-postal.html" class="btn btn-danger fw-bold px-4 py-2">
+          Acessar Cadastro Postal
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- CPo -->
+
+<!-- TABELA DINAMICA -->
+<section class="container mb-5">
+  <h4 class="fw-bold mb-3">Tabela Dinâmica</h4>
+
+  <div class="card shadow-sm p-4">
+
+    <div class="row align-items-center">
+
+      <div class="col-md-2 text-center mb-3 mb-md-0">
+        <i class="fa-solid fa-table-list text-danger" style="font-size: 48px;"></i>
+      </div>
+
+      <div class="col-md-10">
+        <h5 class="fw-bold text-dark">Organize e analise seus dados rapidamente</h5>
+
+        <p class="text-muted mb-3" style="max-width: 700px;">
+          Visualize, filtre e ordene informações do sistema de forma prática, tudo em uma
+          tabela dinâmica responsiva e fácil de usar.
+        </p>
+
+        <a href="tabela.html" class="btn btn-danger fw-bold px-4 py-2">
+          Abrir Tabela Dinâmica
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- TD -->
+
+
+<!-- FOOTER -->
+<footer class="text-center py-4 bg-white shadow-sm mt-5">
+  <p class="mb-0 text-dark fw-semibold">FullFinder © 2025 — Todos os direitos reservados.</p>
+</footer>
+
+<!-- SCRIPTS -->
+
+<script>
+  // Mini gráfico
+  const ctx = document.getElementById("miniGrafico").getContext("2d");
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+      datasets: [{
+        label: "Usuários ativos",
+        data: [120, 180, 240, 320, 410, 520],
+        borderColor: "#d10000",
+        backgroundColor: "rgba(209,0,0,0.2)",
+        borderWidth: 3,
+        tension: 0.4,
+        fill: true
+      }]
+    }
+  });
+
+  // Mini mapa
+  const miniMap = L.map("miniMap").setView([-23.5505, -46.6333], 12);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "© OpenStreetMap" }).addTo(miniMap);
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
